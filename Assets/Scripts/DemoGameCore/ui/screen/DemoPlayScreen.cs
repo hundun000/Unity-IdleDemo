@@ -20,8 +20,16 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
 
         public const String SCENE_NAME = "PlayScene";
 
-        
-        
+        override protected void Awake()
+        {
+            base.Awake();
+
+            this.screenBackgroundVM = this.Contrainer.transform.Find("DemoScreenBackgroundVM").gameObject.GetComponent<IdleScreenBackgroundVM>();
+            this.storageInfoBoardVM = this.UiRoot.transform.Find("cell_0/DemoStorageInfoBoardVM").gameObject.GetComponent<DemoStorageInfoBoardVM>();
+            this.constructionControlBoardVM = this.UiRoot.transform.Find("cell_1/DemoFixedConstructionControlBoardVM").gameObject.GetComponent<DemoFixedConstructionControlBoardVM>();
+            this.secondaryInfoBoard = this.PopoupRoot.transform.Find("DemoPopupInfoBoard").gameObject.GetComponent<DemoPopupInfoBoard>();
+        }
+
 
         public override void show()
         {
@@ -36,18 +44,23 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
 
         protected override void lazyInitBackUiAndPopupUiContent()
         {
-            this.screenBackgroundVM = this.Contrainer.transform.Find("DemoScreenBackgroundVM").gameObject.GetComponent<IdleScreenBackgroundVM>();
             screenBackgroundVM.postPrefabInitialization(this.game.textureManager);
+
+            secondaryInfoBoard.postPrefabInitialization(this);
+
+            foreach (Transform child in this.PopoupRoot.transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+
         }
 
 
 
         protected override void lazyInitUiRootContext()
         {
-            this.storageInfoBoardVM = this.UiRoot.transform.Find("cell_0/DemoStorageInfoBoardVM").gameObject.GetComponent<DemoStorageInfoBoardVM>();
             storageInfoBoardVM.postPrefabInitialization(this, ResourceType.VALUES_FOR_SHOW_ORDER);
 
-            this.constructionControlBoardVM = this.UiRoot.transform.Find("cell_1/DemoFixedConstructionControlBoardVM").gameObject.GetComponent<DemoFixedConstructionControlBoardVM>();
             constructionControlBoardVM.postPrefabInitialization(this);
         }
     }
