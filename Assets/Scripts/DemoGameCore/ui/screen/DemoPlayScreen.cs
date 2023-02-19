@@ -24,10 +24,7 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
         {
             base.Awake();
 
-            this.screenBackgroundVM = this.Contrainer.transform.Find("DemoScreenBackgroundVM").gameObject.GetComponent<IdleScreenBackgroundVM>();
-            this.storageInfoBoardVM = this.UiRoot.transform.Find("cell_0/DemoStorageInfoBoardVM").gameObject.GetComponent<DemoStorageInfoBoardVM>();
-            this.constructionControlBoardVM = this.UiRoot.transform.Find("cell_1/DemoFixedConstructionControlBoardVM").gameObject.GetComponent<DemoFixedConstructionControlBoardVM>();
-            this.secondaryInfoBoard = this.PopoupRoot.transform.Find("DemoPopupInfoBoard").gameObject.GetComponent<DemoPopupInfoBoard>();
+
         }
 
 
@@ -44,14 +41,17 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
 
         protected override void lazyInitBackUiAndPopupUiContent()
         {
-            screenBackgroundVM.postPrefabInitialization(this.game.textureManager);
-
-            secondaryInfoBoard.postPrefabInitialization(this);
-
             foreach (Transform child in this.PopoupRoot.transform)
             {
+                // temp Active make awak() called
+                child.gameObject.SetActive(true);
                 child.gameObject.SetActive(false);
             }
+
+            screenBackgroundVM.postPrefabInitialization(this.game.textureManager);
+
+            popupInfoBoardVM.postPrefabInitialization(this);
+
 
         }
 
@@ -62,6 +62,7 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
             storageInfoBoardVM.postPrefabInitialization(this, ResourceType.VALUES_FOR_SHOW_ORDER);
 
             constructionControlBoardVM.postPrefabInitialization(this);
+            gameAreaControlBoardVM.postPrefabInitialization(this, GameArea.values);
         }
     }
 }

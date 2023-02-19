@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.DemoGameCore.ui.sub
 {
-    internal class DemoPopupInfoBoard : PopupInfoBoard<DemoIdleGame, RootSaveData>
+    internal class DemoPopupInfoBoardVM : PopupInfoBoardVM<DemoIdleGame, RootSaveData>
     {
     }
 }
