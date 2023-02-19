@@ -20,7 +20,6 @@ namespace Assets.Scripts.DemoGameCore
             //this.textFormatTool = new TextFormatTool();
             this.saveHandler = new DemoSaveHandler(frontend, new UnitySaveTool<RootSaveData>());
             this.textureManager = new DemoTextureManager();
-            this.screenContext = new DemoScreenContext(this);
             //this.managerContext = new ManagerContext<>(this);
             this.audioPlayManager = new AudioPlayManager<DemoIdleGame, RootSaveData>(this);
             this.childGameConfig = new DemoChildGameConfig();

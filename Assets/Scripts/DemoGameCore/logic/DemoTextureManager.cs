@@ -14,7 +14,7 @@ namespace Assets.Scripts.DemoGameCore.logic
 {
     public class DemoTextureManager : AbstractTextureManager
     {
-        private static readonly string BASE_FOLDER = "";
+        private static readonly string BASE_FOLDER = "game/";
 
         private static Sprite getSprite(String name)
         {

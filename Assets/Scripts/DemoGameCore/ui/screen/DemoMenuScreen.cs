@@ -7,30 +7,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.DemoGameCore.ui.screen
 {
-    public class DemoMenuScreen : AbstractMenuScreen<DemoIdleGame, RootSaveData>
+    public class DemoMenuScreen : BaseIdleMenuScreen<DemoIdleGame, RootSaveData>
     {
-        
-        public DemoMenuScreen(DemoIdleGame game) : base(
+
+
+
+
+        private IdleScreenBackgroundVM screenBackgroundVM;
+
+        override public void postMonoBehaviourInitialization(DemoIdleGame game) {
+            base.postMonoBehaviourInitialization(
             game,
             "Demo Idle",
-            () => {
+            () =>
+            {
                 game.saveHandler.gameLoadOrNew(true);
                 SceneManager.LoadScene(DemoPlayScreen.SCENE_NAME);
                 game.audioPlayManager.intoScreen(typeof(DemoPlayScreen).Name);
             },
-            () => {
+            () =>
+            {
                 game.saveHandler.gameLoadOrNew(false);
                 SceneManager.LoadScene(DemoPlayScreen.SCENE_NAME);
                 game.audioPlayManager.intoScreen(typeof(DemoPlayScreen).Name);
             }
-            )
-        {
+            );
 
         }
 
+        override public void show()
+        {
+            this.postMonoBehaviourInitialization(DemoIdleGameContainer.Game);
+
+            base.show();
+
+            this.screenBackgroundVM = gameObject.transform.Find("DemoScreenBackgroundVM").gameObject.GetComponent<IdleScreenBackgroundVM>();
+            screenBackgroundVM.postPrefabInitialization(this.game.textureManager);
+        }
     }
 }
+
