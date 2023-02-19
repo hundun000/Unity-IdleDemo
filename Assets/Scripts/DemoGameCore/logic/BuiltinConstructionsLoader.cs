@@ -22,7 +22,7 @@ namespace Assets.Scripts.DemoGameCore.logic
                 construction.descriptionPackage = BaseConstruction.GATHER_DESCRIPTION_PACKAGE;
 
                 OutputComponent outputComponent = new OutputComponent(construction);
-                outputComponent.outputCostPack = (toPack(JavaFeatureForGwt.mapOf(
+                outputComponent.outputGainPack = (toPack(JavaFeatureForGwt.mapOf(
                         ResourceType.COOKIE, 1
                         )));
                 construction.outputComponent = (outputComponent);

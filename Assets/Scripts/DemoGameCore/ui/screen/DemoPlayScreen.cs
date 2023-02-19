@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.DemoGameCore.logic;
+using Assets.Scripts.DemoGameCore.ui.sub;
 using hundun.idleshare.enginecore;
 using hundun.unitygame.enginecorelib;
 using hundun.unitygame.gamelib;
@@ -19,8 +20,8 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
 
         public const String SCENE_NAME = "PlayScene";
 
-        private IdleScreenBackgroundVM screenBackgroundVM;
-        private DemoStorageInfoBoardVM storageInfoBoardVM;
+        
+        
 
         public override void show()
         {
@@ -39,15 +40,15 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
             screenBackgroundVM.postPrefabInitialization(this.game.textureManager);
         }
 
-        protected override void lazyInitLogicContext()
-        {
-            gameAreaChangeListeners.Add(screenBackgroundVM);
-        }
+
 
         protected override void lazyInitUiRootContext()
         {
-            this.storageInfoBoardVM = this.UiRoot.transform.Find("DemoStorageInfoBoardVM").gameObject.GetComponent<DemoStorageInfoBoardVM>();
+            this.storageInfoBoardVM = this.UiRoot.transform.Find("cell_0/DemoStorageInfoBoardVM").gameObject.GetComponent<DemoStorageInfoBoardVM>();
             storageInfoBoardVM.postPrefabInitialization(this, ResourceType.VALUES_FOR_SHOW_ORDER);
+
+            this.constructionControlBoardVM = this.UiRoot.transform.Find("cell_1/DemoFixedConstructionControlBoardVM").gameObject.GetComponent<DemoFixedConstructionControlBoardVM>();
+            constructionControlBoardVM.postPrefabInitialization(this);
         }
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4063741792982326339}
   - component: {fileID: 6055349372604475209}
   m_Layer: 0
-  m_Name: ResourceAmountPairNode
+  m_Name: ResourceAmountPairNodeVM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
