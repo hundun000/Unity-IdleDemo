@@ -5,29 +5,17 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DemoIdleGameContainer : ContainerMonoBehaviour<DemoIdleGame>
+public class DemoIdleGameContainer
 {
-
-    public static DemoIdleGame Game { get; private set; }
-
-    void Awake()
-    {
-        this.Content = new DemoIdleGame();
-        DemoIdleGameContainer.Game = Content;
-        Content.create();
+    private static DemoIdleGame game;
+    public static DemoIdleGame Game { get {
+            if (game == null)
+            {
+                game = new DemoIdleGame();
+                game.create();
+            }
+            return game;
+        }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -47,7 +47,7 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
         protected override void lazyInitUiRootContext()
         {
             this.storageInfoBoardVM = this.UiRoot.transform.Find("DemoStorageInfoBoardVM").gameObject.GetComponent<DemoStorageInfoBoardVM>();
-
+            storageInfoBoardVM.postPrefabInitialization(this, ResourceType.VALUES_FOR_SHOW_ORDER);
         }
     }
 }

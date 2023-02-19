@@ -30,7 +30,10 @@ namespace Assets.Scripts.DemoGameCore.logic
                                     .workingLevel(0)
                                     .build()));
             gameplaySaveData.ownResoueces = (new Dictionary<String, long>());
+            //gameplaySaveData.ownResoueces.Add(ResourceType.COOKIE, 42);
             gameplaySaveData.unlockedResourceTypes = (new HashSet<String>());
+            gameplaySaveData.unlockedResourceTypes.Add(ResourceType.COOKIE);
+            gameplaySaveData.unlockedResourceTypes.Add(ResourceType.COIN);
             gameplaySaveData.unlockedAchievementNames = (new HashSet<String>());
 
             var rootSaveData = new RootSaveData(gameplaySaveData);
