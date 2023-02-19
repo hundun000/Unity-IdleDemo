@@ -1,0 +1,6 @@
+[submodule "Assets/Scripts/IdleShare"]
+	path = Assets/Scripts/IdleShare
+	url = https://github.com/hundun000/Unity-IdleShare.git
+[submodule "Assets/Scripts/HundunLib"]
+	path = Assets/Scripts/HundunLib
+	url = https://github.com/hundun000/Unity-HundunLib.git
