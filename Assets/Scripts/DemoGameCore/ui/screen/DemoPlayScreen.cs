@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,11 +21,15 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
 
         public const String SCENE_NAME = "PlayScene";
 
+        DemoGameEntityFactory gameEntityFactory;
+        Transform drawContaioner;
+
         override protected void Awake()
         {
             base.Awake();
 
-
+            this.gameEntityFactory = this.UiRoot.transform.Find("cell_drawContaioner/GameEntityFactory").GetComponent<DemoGameEntityFactory>();
+            this.drawContaioner = this.UiRoot.transform.Find("cell_drawContaioner/root").transform;
         }
 
 
@@ -63,6 +68,14 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
 
             constructionControlBoardVM.postPrefabInitialization(this);
             gameAreaControlBoardVM.postPrefabInitialization(this, GameArea.values);
+        }
+
+        override protected void lazyInitLogicContext()
+        {
+            base.lazyInitLogicContext();
+
+            gameEntityFactory.postPrefabInitialization(this, drawContaioner);
+            gameImageDrawer.lazyInit(this, gameEntityFactory);
         }
     }
 }
