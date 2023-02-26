@@ -27,13 +27,11 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
             {
                 game.saveHandler.gameplayLoadOrStarter(true);
                 SceneManager.LoadScene(DemoPlayScreen.SCENE_NAME);
-                game.audioPlayManager.intoScreen(typeof(DemoPlayScreen).Name);
             },
             () =>
             {
                 game.saveHandler.gameplayLoadOrStarter(false);
                 SceneManager.LoadScene(DemoPlayScreen.SCENE_NAME);
-                game.audioPlayManager.intoScreen(typeof(DemoPlayScreen).Name);
             }
             );
 

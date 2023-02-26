@@ -44,7 +44,8 @@ namespace Assets.Scripts.DemoGameCore
             this.areaShowEntityByChangeAmountResourceIds = (areaShowEntityByChangeAmountResourceIds);
 
             Dictionary<String, String> screenIdToFilePathMap = JavaFeatureForGwt.mapOf(
-                    typeof(DemoMenuScreen).Name, "audio/Loop-Menu.wav"
+                    typeof(DemoMenuScreen).Name, "audio/Loop-Menu.wav",
+                    typeof(DemoPlayScreen).Name, "audio/forest.mp3"
                 );
             this.screenIdToFilePathMap = (screenIdToFilePathMap);
 
