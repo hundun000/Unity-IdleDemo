@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.DemoGameCore.logic
 {
-    public class GameDictionary : IGameDictionary
+    public class DemoGameDictionary : IGameDictionary
     {
 
         public String constructionIdToShowName(String constructionId)

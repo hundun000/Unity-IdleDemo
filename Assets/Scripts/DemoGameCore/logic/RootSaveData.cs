@@ -11,20 +11,22 @@ namespace Assets.Scripts.DemoGameCore.logic
     public class RootSaveData
     {
         public GameplaySaveData gameplaySave;
+        public SystemSettingSaveData systemSettingSaveData;
 
-        public RootSaveData(GameplaySaveData gameplaySave)
+        public RootSaveData(GameplaySaveData gameplaySave, SystemSettingSaveData systemSettingSaveData)
         {
             this.gameplaySave = gameplaySave;
+            this.systemSettingSaveData = systemSettingSaveData;
         }
     }
 
-    public class Factory : IFactory<RootSaveData, Object, GameplaySaveData> {
+    public class Factory : IFactory<RootSaveData, SystemSettingSaveData, GameplaySaveData> {
 
         public static readonly Factory INSTANCE = new Factory();
 
-    public Object getSystemSave(RootSaveData rootSaveData)
+    public SystemSettingSaveData getSystemSave(RootSaveData rootSaveData)
     {
-        return null;
+        return rootSaveData.systemSettingSaveData;
     }
 
     public GameplaySaveData getGameplaySave(RootSaveData rootSaveData)
@@ -32,9 +34,9 @@ namespace Assets.Scripts.DemoGameCore.logic
         return rootSaveData.gameplaySave;
     }
 
-    public RootSaveData newRootSave(GameplaySaveData gameplaySave, Object systemSettingSave)
+    public RootSaveData newRootSave(GameplaySaveData gameplaySave, SystemSettingSaveData systemSettingSaveData)
     {
-        return new RootSaveData(gameplaySave);
+        return new RootSaveData(gameplaySave, systemSettingSaveData);
     }
 
     public GameplaySaveData newGameplaySave()
@@ -42,9 +44,9 @@ namespace Assets.Scripts.DemoGameCore.logic
         return new GameplaySaveData();
     }
 
-    public Object newSystemSave()
+    public SystemSettingSaveData newSystemSave()
     {
-        return null;
+        return new SystemSettingSaveData();
     }
 
 }

@@ -10,7 +10,7 @@ using UnityEditor.Tilemaps;
 
 namespace Assets.Scripts.DemoGameCore.logic
 {
-    internal class DemoSaveHandler : StarterSaveHandler<RootSaveData, Object, GameplaySaveData>
+    internal class DemoSaveHandler : StarterSaveHandler<RootSaveData, SystemSettingSaveData, GameplaySaveData>
     {
 
         public DemoSaveHandler(IFrontend frontEnd, ISaveTool<RootSaveData> saveTool) : base(frontEnd, Factory.INSTANCE, saveTool)
@@ -36,7 +36,9 @@ namespace Assets.Scripts.DemoGameCore.logic
             gameplaySaveData.unlockedResourceTypes.Add(ResourceType.COIN);
             gameplaySaveData.unlockedAchievementNames = (new HashSet<String>());
 
-            var rootSaveData = new RootSaveData(gameplaySaveData);
+            var systemSettingSaveData = new SystemSettingSaveData();
+            systemSettingSaveData.language = Language.EN;
+            var rootSaveData = new RootSaveData(gameplaySaveData, systemSettingSaveData);
             return rootSaveData;
 
         }

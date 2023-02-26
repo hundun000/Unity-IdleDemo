@@ -9,17 +9,17 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 namespace Assets.Scripts.DemoGameCore.logic
 {
-    public class BuiltinConstructionsLoader
+    public class DemoBuiltinConstructionsLoader : IBuiltinConstructionsLoader
     {
 
-        public static List<BaseConstruction> initProviders()
+        public List<BaseConstruction> provide(Language language)
         {
             List<BaseConstruction> constructions = new List<BaseConstruction>();
             // clicker-provider
             {
                 BaseConstruction construction = new BaseClickGatherConstruction(ConstructionId.COOKIE_CLICK_PROVIDER);
                 construction.detailDescroptionConstPart = "Click gain some cookie";
-                construction.descriptionPackage = BaseConstruction.GATHER_DESCRIPTION_PACKAGE;
+                construction.descriptionPackage = DescriptionPackageFactory.getGatherDescriptionPackage(language);
 
                 OutputComponent outputComponent = new OutputComponent(construction);
                 outputComponent.outputGainPack = (toPack(JavaFeatureForGwt.mapOf(
@@ -39,7 +39,7 @@ namespace Assets.Scripts.DemoGameCore.logic
             {
                 BaseConstruction construction = new BaseAutoConstruction(ConstructionId.COOKIE_AUTO_PROVIDER);
                 construction.detailDescroptionConstPart = "Auto gain some cookie";
-                construction.descriptionPackage = BaseConstruction.MAX_LEVEL_AUTO_DESCRIPTION_PACKAGE;
+                construction.descriptionPackage = DescriptionPackageFactory.getMaxLevelAutoDescriptionPackage(language);
 
                 OutputComponent outputComponent = new OutputComponent(construction);
                 outputComponent.outputGainPack = (toPack(JavaFeatureForGwt.mapOf(
@@ -63,7 +63,7 @@ namespace Assets.Scripts.DemoGameCore.logic
             {
                 BaseConstruction construction = new BaseAutoConstruction(ConstructionId.COOKIE_SELLER);
                 construction.detailDescroptionConstPart = "Auto sell cookies";
-                construction.descriptionPackage = BaseConstruction.WORKING_LEVEL_AUTO_DESCRIPTION_PACKAGE;
+                construction.descriptionPackage = DescriptionPackageFactory.getWorkingLevelAutoDescriptionPackage(language);
 
                 OutputComponent outputComponent = new OutputComponent(construction);
                 outputComponent.outputCostPack = (toPack(JavaFeatureForGwt.mapOf(
@@ -90,7 +90,7 @@ namespace Assets.Scripts.DemoGameCore.logic
             {
                 BaseConstruction construction = new BaseBuffConstruction(ConstructionId.WIN_PROVIDER, BuffId.WIN);
                 construction.detailDescroptionConstPart = "Get a trophy and win the game";
-                construction.descriptionPackage = BaseConstruction.WIN_DESCRIPTION_PACKAGE;
+                construction.descriptionPackage = DescriptionPackageFactory.getWinDescriptionPackage(language);
 
                 OutputComponent outputComponent = new OutputComponent(construction);
                 construction.outputComponent = (outputComponent);

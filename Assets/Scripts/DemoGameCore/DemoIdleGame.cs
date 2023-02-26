@@ -31,12 +31,19 @@ namespace Assets.Scripts.DemoGameCore
 
             this.idleGameplayExport = new IdleGameplayExport(
                     frontend,
-                    new GameDictionary(),
-                    new BaseConstructionFactory(BuiltinConstructionsLoader.initProviders()),
+                    new DemoGameDictionary(),
+                    new DemoBuiltinConstructionsLoader(),
                     LOGIC_FRAME_PER_SECOND,
                     childGameConfig
                     );
+            this.saveHandler.registerSubHandler(idleGameplayExport);
+            saveHandler.systemSettingLoadOrNew();
         }
 
+        override protected void createStage3()
+        {
+            base.createStage3();
+
+        }
     }
 }
