@@ -1,3 +1,16 @@
+## 项目
+
+- 一个Unity放置游戏框架，可基于此框架开发任意主题的放置游戏。
+- 基于此框架，饼干为主题，得到的放置游戏。
+
+该框架还有Libgdx引擎(java)版本[hundun-idle-all项目](https://github.com/hundun000/hundun-idle-all)，且Unity版翻译自Libgdx版，故Unity版代码架构和风格会比较奇怪。
+
+![](./docs/1.png)
+
+![](./docs/2.png)
+
+![](./docs/3.png)
+
 ## 游戏概念一览
 
 ### 资源
@@ -46,6 +59,12 @@ demo里，获得成就时将弹窗提示。
 - 展示的设施类型
 - 展示的GameEntity类型，及其位置和移动方式（下落的饼干，排成一列的手指和箱子）
 - （在“资源面板”上）展示的资源类型（一般都展示所有资源类型）
+
+### 存档
+
+游戏关闭时会自动存档。存档位于:
+
+Windows `%userprofile%\AppData\LocalLow\DefaultCompany\Unity-IdleDemo`
 
 ## 代码架构
 
