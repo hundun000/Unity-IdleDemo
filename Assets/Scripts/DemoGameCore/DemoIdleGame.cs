@@ -37,7 +37,7 @@ namespace Assets.Scripts.DemoGameCore
                     childGameConfig
                     );
             this.saveHandler.registerSubHandler(idleGameplayExport);
-            saveHandler.systemSettingLoadOrNew();
+            saveHandler.systemSettingLoadOrStarter();
         }
 
         override protected void createStage3()

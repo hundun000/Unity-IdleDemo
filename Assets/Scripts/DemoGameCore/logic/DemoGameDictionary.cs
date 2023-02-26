@@ -90,9 +90,31 @@ namespace Assets.Scripts.DemoGameCore.logic
             switch (language)
             {
                 case Language.CN:
-                    return JavaFeatureForGwt.arraysAsList("Idle样例", "新游戏", "继续游戏");
+                    return JavaFeatureForGwt.arraysAsList("Idle样例", "新游戏", "继续游戏", "语言", "重启后生效");
                 default:
-                    return JavaFeatureForGwt.arraysAsList("Demo游戏", "新游戏", "继续游戏");
+                    return JavaFeatureForGwt.arraysAsList("IdleDemo", "New Game", "Continue", "Language", "Take effect after restart");
+            }
+        }
+
+        public string language(Language it)
+        {
+            switch (it)
+            {
+                case Language.CN:
+                    return "中文";
+                default:
+                    return "English";
+            }
+        }
+
+        public Language unLanguage(string it)
+        {
+            switch (it)
+            {
+                case "中文":
+                    return Language.CN;
+                default:
+                    return Language.EN;
             }
         }
     }

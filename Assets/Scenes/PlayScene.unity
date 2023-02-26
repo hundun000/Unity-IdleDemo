@@ -1305,7 +1305,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScreenBackgroundVM
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5395826240742471825, guid: 8507664215a972a4da87c42d5d885992, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8507664215a972a4da87c42d5d885992, type: 3}
 --- !u!224 &619188596 stripped
 RectTransform:

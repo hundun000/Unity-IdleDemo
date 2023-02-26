@@ -18,20 +18,20 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
 
 
 
-        private IdleScreenBackgroundVM screenBackgroundVM;
+        
 
         override public void postMonoBehaviourInitialization(DemoIdleGame game) {
             base.postMonoBehaviourInitialization(
             game,
             () =>
             {
-                game.saveHandler.gameLoadOrNew(true);
+                game.saveHandler.gameplayLoadOrStarter(true);
                 SceneManager.LoadScene(DemoPlayScreen.SCENE_NAME);
                 game.audioPlayManager.intoScreen(typeof(DemoPlayScreen).Name);
             },
             () =>
             {
-                game.saveHandler.gameLoadOrNew(false);
+                game.saveHandler.gameplayLoadOrStarter(false);
                 SceneManager.LoadScene(DemoPlayScreen.SCENE_NAME);
                 game.audioPlayManager.intoScreen(typeof(DemoPlayScreen).Name);
             }
@@ -45,8 +45,7 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
 
             base.show();
 
-            this.screenBackgroundVM = gameObject.transform.Find("DemoScreenBackgroundVM").gameObject.GetComponent<IdleScreenBackgroundVM>();
-            screenBackgroundVM.postPrefabInitialization(this.game.textureManager);
+            
         }
     }
 }

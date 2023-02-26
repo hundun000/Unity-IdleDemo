@@ -10,7 +10,7 @@ using UnityEditor.Tilemaps;
 
 namespace Assets.Scripts.DemoGameCore.logic
 {
-    internal class DemoSaveHandler : StarterSaveHandler<RootSaveData, SystemSettingSaveData, GameplaySaveData>
+    internal class DemoSaveHandler : PairChildrenSaveHandler<RootSaveData, SystemSettingSaveData, GameplaySaveData>
     {
 
         public DemoSaveHandler(IFrontend frontEnd, ISaveTool<RootSaveData> saveTool) : base(frontEnd, Factory.INSTANCE, saveTool)

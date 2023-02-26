@@ -20,7 +20,7 @@ namespace Assets.Scripts.DemoGameCore.logic
         }
     }
 
-    public class Factory : IFactory<RootSaveData, SystemSettingSaveData, GameplaySaveData> {
+    public class Factory : IRootSaveExtension<RootSaveData, SystemSettingSaveData, GameplaySaveData> {
 
         public static readonly Factory INSTANCE = new Factory();
 

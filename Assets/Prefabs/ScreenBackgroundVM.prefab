@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 82754160744006950}
-  - component: {fileID: 5395826240742471825}
+  - component: {fileID: 1845564866800880958}
   m_Layer: 0
   m_Name: ScreenBackgroundVM
   m_TagString: Untagged
@@ -38,7 +38,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5395826240742471825
+--- !u!114 &1845564866800880958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
