@@ -23,7 +23,6 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
         override public void postMonoBehaviourInitialization(DemoIdleGame game) {
             base.postMonoBehaviourInitialization(
             game,
-            "Demo Idle",
             () =>
             {
                 game.saveHandler.gameLoadOrNew(true);
