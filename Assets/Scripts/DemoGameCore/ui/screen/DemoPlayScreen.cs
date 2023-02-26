@@ -56,7 +56,7 @@ namespace Assets.Scripts.DemoGameCore.ui.screen
             screenBackgroundVM.postPrefabInitialization(this.game.textureManager);
 
             popupInfoBoardVM.postPrefabInitialization(this);
-
+            achievementMaskBoard.postPrefabInitialization(this);
 
         }
 

@@ -34,11 +34,8 @@ namespace Assets.Scripts.DemoGameCore
             this.areaControlableConstructionIds = (areaShownConstructionIds);
             this.areaShowEntityByOwnAmountConstructionIds = (areaShownConstructionIds);
 
-            Dictionary<String, List<String>> areaShownResourceIds = new Dictionary<String, List<String>>();
-            areaShownResourceIds.put(GameArea.AREA_COOKIE, JavaFeatureForGwt.arraysAsList(
-                ResourceType.COIN
-            ));
-            this.areaShowEntityByOwnAmountResourceIds = (areaShownResourceIds);
+            Dictionary<String, List<String>> areaShowEntityByOwnAmountResourceIds = new Dictionary<String, List<String>>();
+            this.areaShowEntityByOwnAmountResourceIds = (areaShowEntityByOwnAmountResourceIds);
 
             Dictionary<String, List<String>> areaShowEntityByChangeAmountResourceIds = new Dictionary<String, List<String>>();
             areaShowEntityByChangeAmountResourceIds.put(GameArea.AREA_COOKIE, JavaFeatureForGwt.arraysAsList(

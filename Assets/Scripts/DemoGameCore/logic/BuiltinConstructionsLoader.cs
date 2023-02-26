@@ -93,12 +93,6 @@ namespace Assets.Scripts.DemoGameCore.logic
                 construction.descriptionPackage = BaseConstruction.WIN_DESCRIPTION_PACKAGE;
 
                 OutputComponent outputComponent = new OutputComponent(construction);
-                //            outputComponent.outputCostPack = (toPack(JavaFeatureForGwt.mapOf(
-                //                    ResourceType.COIN, 500
-                //                    )));
-                //            outputComponent.outputGainPack = (toPack(JavaFeatureForGwt.mapOf(
-                //                    ResourceType.WIN_TROPHY, 1
-                //                    )));
                 construction.outputComponent = (outputComponent);
 
                 UpgradeComponent upgradeComponent = new UpgradeComponent(construction);
