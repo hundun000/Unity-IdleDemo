@@ -96,26 +96,12 @@ namespace Assets.Scripts.DemoGameCore.logic
             }
         }
 
-        public string language(Language it)
+        public Dictionary<Language, string> getLanguageShowNameMap()
         {
-            switch (it)
-            {
-                case Language.CN:
-                    return "中文";
-                default:
-                    return "English";
-            }
-        }
-
-        public Language unLanguage(string it)
-        {
-            switch (it)
-            {
-                case "中文":
-                    return Language.CN;
-                default:
-                    return Language.EN;
-            }
+            return JavaFeatureForGwt.mapOf(
+                Language.CN, "中文",
+                Language.EN, "English"
+                );
         }
     }
 }
