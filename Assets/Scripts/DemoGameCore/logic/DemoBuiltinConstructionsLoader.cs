@@ -18,7 +18,6 @@ namespace Assets.Scripts.DemoGameCore.logic
             // clicker-provider
             {
                 BaseConstruction construction = new BaseClickGatherConstruction(ConstructionId.COOKIE_CLICK_PROVIDER);
-                construction.detailDescroptionConstPart = "Click gain some cookie";
                 construction.descriptionPackage = DescriptionPackageFactory.getGatherDescriptionPackage(language);
 
                 OutputComponent outputComponent = new OutputComponent(construction);
@@ -38,7 +37,6 @@ namespace Assets.Scripts.DemoGameCore.logic
             // auto-provider
             {
                 BaseConstruction construction = new BaseAutoConstruction(ConstructionId.COOKIE_AUTO_PROVIDER);
-                construction.detailDescroptionConstPart = "Auto gain some cookie";
                 construction.descriptionPackage = DescriptionPackageFactory.getMaxLevelAutoDescriptionPackage(language);
 
                 OutputComponent outputComponent = new OutputComponent(construction);
@@ -62,7 +60,6 @@ namespace Assets.Scripts.DemoGameCore.logic
             // seller
             {
                 BaseConstruction construction = new BaseAutoConstruction(ConstructionId.COOKIE_SELLER);
-                construction.detailDescroptionConstPart = "Auto sell cookies";
                 construction.descriptionPackage = DescriptionPackageFactory.getWorkingLevelAutoDescriptionPackage(language);
 
                 OutputComponent outputComponent = new OutputComponent(construction);
@@ -89,7 +86,6 @@ namespace Assets.Scripts.DemoGameCore.logic
             // win
             {
                 BaseConstruction construction = new BaseBuffConstruction(ConstructionId.WIN_PROVIDER, BuffId.WIN);
-                construction.detailDescroptionConstPart = "Get a trophy and win the game";
                 construction.descriptionPackage = DescriptionPackageFactory.getWinDescriptionPackage(language);
 
                 OutputComponent outputComponent = new OutputComponent(construction);
